@@ -1,0 +1,116 @@
+/* ---Создание и редактирование Pizza-Grid элементов--- */
+.goods {
+    width: 100%;
+    height: auto;
+    
+}
+.pizza-goods {
+    margin-top: 10rem;
+}
+.pizza-goods__title-block{
+    display: inline-block;
+    margin:0 0 4rem 10.5rem;
+    border-bottom: 2px solid black;
+    p{
+        font-family: 'Solitreo', cursive;
+        font-size: 24px;
+        font-weight: 500;
+        color: #000000;
+        margin: 0;  
+    }
+}
+.pizza-goods__grid-container {
+    margin: 0 auto;
+    width: 60%;
+    height: auto;
+    display: grid;
+    gap: 5rem ;
+    grid-template: repeat(3 , 1fr) / repeat(3 , 1fr);
+    grid-auto-rows: 1fr;
+    grid-auto-columns: 1fr;
+
+    
+
+}
+.pizza-goods__grid-element {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+.pizza-goods__image {
+    flex:1 1 60%;
+    max-width: 300px;
+    min-height: 5rem;
+    display: flex;
+    justify-content: center;
+    img{
+        width: 100%;
+        
+    }
+}
+.pizza-goods__description {
+    flex: 1 1 30%;
+    display: flex;
+    flex-direction: column;
+}
+.pizza-goods__title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: #000000;
+}
+.pizza-goods__text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+    color: #3c3c3c;   
+}
+.pizza-goods__price-and-buy {
+    flex: 1 1 10%;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.pizza-goods__price {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.pizza-goods__actual-price {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: #000000;
+    margin: 0;
+}
+.pizza-goods__previous-price {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    color: #3c3c3c;
+    opacity: .5;
+    margin: 0.2rem 0 0 0;
+}
+.pizza-goods__strikethrough-price {
+    position: absolute;
+    top: 1.7rem;
+    left: .2rem;
+    max-width: 15px;
+    img{
+        width: 100%;
+    }
+
+}
+.pizza-goods__select {
+    display: block;
+    width: 5.5rem;
+    height: 2rem;
+    padding: 0 10px;
+    border-radius: 15px;
+    border: 1px solid black;
+    background-color: #008454;
+    transition-duration: 0.5s;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    color: #F6FFF8;
+    &:hover{
+        background-color: #024e32;
+    }  
+}

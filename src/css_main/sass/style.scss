@@ -9,14 +9,42 @@ body{
 .general-wrapper {
     /* display: flex;
     flex-direction: column; */
-    width: 100%
+    width: 100vw
 }
 .general-wrapper__background-container {
     position: relative;
-    background:url("/img/background_table.jpg") center center/cover no-repeat;
+    background:url("../../img/background_table.jpg") center center/cover no-repeat;
     width: 100vw;
-    height: 120vh;
-    
+    height: 50rem;
+    .rolling-pizza {
+        position: absolute;
+        top: 13em;
+        width: 100%;
+        height: 25em;
+    }
+    .rolling-pizza__container {
+        display: block;
+        width: 35em;
+        height: 35em;
+        margin: 0 auto;
+
+        
+    }
+    .rolling-pizza__block {
+        z-index: 1;
+        background:url("../../img/pizza_with_shadow.png") center center/cover no-repeat;
+        width: 100%;
+        height: 100%;
+        animation: pizzarolling 90s linear infinite;
+        @keyframes pizzarolling{
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }    
+        }
+    }
 }
 .top_header__sign-up{
     display: flex;
@@ -24,7 +52,7 @@ body{
     /* padding: 2rem 0 0 0; */
     width: 100%;
     height: 13%;
-    background-color: rgba($color: #ffffff, $alpha: .5);
+    background-color: rgba($color: #ffffff, $alpha: .2);
     /* backdrop-filter: blur(3px); */
 }
     .top_header__logo-name {
@@ -108,12 +136,14 @@ body{
     position: sticky;
     top: 0;
     width: 100%;
-    height: 11.5%;
-    background-color: rgba($color: #ffffff, $alpha: .5);
+    height: 5rem;
+    background-color: rgba($color: #ffffff, $alpha: .2);
     /* backdrop-filter: blur(3px); */
     z-index: 100;
 &.active{
+        position: fixed;
         backdrop-filter: blur(3px);
+        height: 5.12rem;
     }
 }
 .container {
@@ -203,50 +233,28 @@ body{
     }
 }
 .main {
+    margin-top: 43.5rem;
     width: 100%;
     height: 1500px;
-    .rolling-pizza {
-        position: relative;
-        width: 100%;
-        height: 800px;
-    }
-    .rolling-pizza__container {
-        position: relative;
-        display: block;
-        width: 35em;
-        height: 35em;
-        margin: 0 auto;
-
-        
-    }
-    .rolling-pizza__block {
-        position: absolute;
-        z-index: 1;
-        background:url("/img/pizza_with_shadow.png") center center/cover no-repeat;
-        width: 100%;
-        height: 100%;
-        animation: pizzarolling 90s linear infinite;
-        @keyframes pizzarolling{
-        0%{
-            transform: rotate(0deg);
-        }
-        100%{
-            transform: rotate(360deg);
-        }    
-        }
-    }
 }
 .slider {
+  /*   background-color: rgba($color: #000000, $alpha: .2); */
+    padding: 5rem 0;
+   img{ 
     display: block;
-    width: 500px;
-    height: 100px;
     margin: 0 auto;
-    
-    img{
-        width: 100%;
-    }
+    border-radius: 15px;
+    max-height: 25em;
+    /* min-width: 75vw; */
 }
+}
+/* Импортирование Grid-Элементов */
+@import "../sass/pizza_grid";
+@import "../sass/starter_grid";
+@import "../sass/drinks_grid";
+@import "../sass/sandwiches_grid";
+@import "../sass/combo_grid";
 
 
-.footer {
-}
+/* .footer {
+} */

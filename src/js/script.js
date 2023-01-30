@@ -1,11 +1,12 @@
 $(document).ready(function(){
-  $('.slider').slick({
+  $('.slider__block').slick( {
     dots: true,
     infinite: true,
     speed: 300,
     slidesToShow: 1,
-    adaptiveHeight: true
-  });
+    /* variableWidth: true,
+    adaptiveHeight: true */
+  } );
 });
 
 window.addEventListener('scroll', function() {
